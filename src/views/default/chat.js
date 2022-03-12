@@ -6,16 +6,19 @@ var host = location.origin;
 var url = parseInt(host.split(':').reverse()[0]);
 var hostSocket = host.replace(url, 8001);
 
+var socket = io.connect(hostSocket, {
+    'transports': ['websocket', 'polling']
+});
+
 var app = require('express')();
 var http = require('http').Server(app);
-var io = require('socket.io')(http);
 
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/chat.html');
 });
 
 var userId = 0;
-io.on('connection', function(socket){
+socket.on('connection', function(socket){
     socket.userId = userId ++;
     console.log('a user connected, user id: ' + socket.userId);
 
@@ -28,6 +31,10 @@ io.on('connection', function(socket){
     });
 });
 
-http.listen(8001, function(){
+socket.listen(8001, function(){
     console.log('listening on *:8001');
 });
+
+// http.listen(8001, function(){
+//     console.log('listening on *:8001');
+// });
