@@ -18,18 +18,15 @@ app.get('/', function(req, res){
 });
 
 var userId = 0;
-socket.on('connection', function(socket){
-    socket.userId = userId ++;
-    console.log('a user connected, user id: ' + socket.userId);
 
     socket.on('chat', function(msg){
+        socket.userId = userId ++;
         console.log('message from user#' + socket.userId + ": " + msg);
         io.emit('chat', {
             id: socket.userId,
             msg: msg
         });
     });
-});
 
 socket.listen(8001, function(){
     console.log('listening on *:8001');
