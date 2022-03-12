@@ -7,7 +7,7 @@ var url = parseInt(host.split(':').reverse()[0]);
 var hostSocket = host.replace(url, 8001);
 
 var socket = io.connect(hostSocket, {
-    'transports': ['websocket', 'polling']
+    'transports': ['websocket']
 });
 
 var app = require('express')();
