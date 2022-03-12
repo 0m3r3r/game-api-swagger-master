@@ -9,7 +9,6 @@ export default {
   server: {
     // Express
     ip: "game.fourasteknoloji.net",
-    port: 80,
   },
   log: true, // show logs
   // Roles: if a user has multiple roles, will take the time of the greater role
@@ -122,7 +121,7 @@ export default {
     },
   },
   // globals
-  mode: process.env.NODE_ENV || "development", // mode
+  mode: process.env.NODE_ENV || "production", // mode
   name: APP_NAME, // name
   node: parseInt(process.env.NODE_APP_INSTANCE) || 0, // node instance
   root: path.normalize(`${__dirname}/../..`), // root
