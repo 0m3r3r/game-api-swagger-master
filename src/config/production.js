@@ -9,7 +9,6 @@ export default {
   server: {
     // Express
     ip: "game.fourasteknoloji.net",
-    port: 80,
   },
   log: false, // show logs
   // Roles: if a user has multiple roles, will take the time of the greater role
