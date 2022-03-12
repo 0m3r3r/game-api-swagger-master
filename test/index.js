@@ -7,7 +7,7 @@ import config from '../src/config';
 
 describe('/', () => {
 
-  const host = `http://${config.server.ip}:${config.server.port}`;
+  const host = `https://${config.server.ip}:${config.server.port}`;
 
   // Server Online
   it('host should return 200 (Server Online)', done => {
@@ -153,7 +153,7 @@ describe('/', () => {
 
   });
 
-  // Send Token 
+  // Send Token
   it('/api/user/me should return 200 (Test Token)', done => {
 
     let options = {
