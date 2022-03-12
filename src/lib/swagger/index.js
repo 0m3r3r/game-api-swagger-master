@@ -33,7 +33,7 @@ export async function index(app) {
       // Serve the Swagger documents and Swagger UI
       //   http://localhost:8000/docs => Swagger UI
       //   http://localhost:8000/api-docs => Swagger document
-      // app.use(middleware.swaggerUi());
+       app.use(middleware.swaggerUi());
 
       app.use(errorHandler);
 

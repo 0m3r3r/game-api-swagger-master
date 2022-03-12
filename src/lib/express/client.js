@@ -19,6 +19,7 @@ export default (app) => {
     file = config.mode;
     if (config['socket.io'].example) {
       app.use('/socket', express.static(`${client}/socket.html`));
+      app.use('/chat', express.static(`${client}/chat.html`));
       app.use('/token', express.static(`${client}/token.html`));
     }
   }
@@ -30,7 +31,7 @@ export default (app) => {
   app.get('/*', (req, res) => res.sendFile(`${client}/${file}.html`));
 
   // Other examples
-  // app.use('/bower_components', express.static(`${config.root}/bower_components`));
+  // app.use('/chat', express.static(`${config.root}/chat.html`));
   // app.get('/:url(admin)/*', (req, res) => res.sendFile(`${config.client2}/index.html`));
 
 }
