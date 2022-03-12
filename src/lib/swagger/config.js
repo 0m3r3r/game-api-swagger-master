@@ -20,7 +20,7 @@ export default (app) => {
         OAuth2: {
           type: "oauth2",
           flow: "implicit",
-          authorizationUrl: `http://${config.server.ip}:${config.server.port}/auth/github`,
+          authorizationUrl: `https://${config.server.ip}:${config.server.port}/auth/github`,
           // tokenUrl: `http://${config.server.ip}:${config.server.port}/#/token`,
           description:
             'Copy the generated token value in the url, and paste it into "Api key authorization"',

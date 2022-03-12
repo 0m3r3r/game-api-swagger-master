@@ -26,12 +26,12 @@ const app = express();
   // Paths
   await require('./lib/express/client').default(app);
 
-  // Server 
+  // Server
   app.listen(config.server.port, config.server.ip, () => {
     // Info
     console.log(chalk.greenBright(`-------\nServer-> 
           mode: [${chalk.magentaBright(`${config.mode}`)}]
-          url: ${chalk.blueBright(`http://${config.server.ip}:${config.server.port}`)}\n-------`));
+          url: ${chalk.blueBright(`https://${config.server.ip}:${config.server.port}`)}\n-------`));
     // Ready!
     console.log(chalk.black.bgGreenBright(`>>nodetomic-api-swagger ready!<<`));
   });

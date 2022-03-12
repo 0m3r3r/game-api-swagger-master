@@ -1,14 +1,14 @@
 import path from "path";
 
-const APP_NAME = `your-app-name`;
-const DB_NAME = `your-database-name`;
+const APP_NAME = `game`;
+const DB_NAME = `admin`;
 const CLIENT = "/client";
 
 export default {
-  secret: `your_secret_key`, // Secret Key
+  secret: `game_fouras`, // Secret Key
   server: {
     // Express
-    ip: "localhost",
+    ip: "game.fourasteknoloji.net",
     port: 8000,
   },
   log: false, // show logs
@@ -50,8 +50,8 @@ export default {
   },
   mongoose: {
     // MongoDB
-    // uri: mongodb://username:password@host:port/database?options
-    uri: `mongodb://localhost:27017/${DB_NAME}`,
+    uri: `mongodb://Admin:fouras12345@localhost:27017/${DB_NAME}`,
+    // uri: `mongodb://localhost:27017/${DB_NAME}`,
     options: {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -82,8 +82,8 @@ export default {
       description: `RESTful API ${APP_NAME}`,
       contact: {
         name: "Developer",
-        url: "http://www.example.com",
-        email: "example@example.com",
+        url: "https://game.fourasteknoloji.com",
+        email: "game@fourasteknoloji.com",
       },
       license: {
         name: "MIT",
@@ -129,3 +129,4 @@ export default {
   base: path.normalize(`${__dirname}/..`), // base
   client: `${path.normalize(`${__dirname}/../..`)}${CLIENT}`, // client
 };
+
