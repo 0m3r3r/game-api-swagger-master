@@ -17,6 +17,15 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/chat.html');
 });
 
+$('form').submit(function(){
+    socket.emit('chat', $('#m').val());
+    $('#m').val('');
+    return false;
+});
+socket.on('chat', function(data){
+    $('#messages').append($('<li>').text("user#" + data.id + ": " + data.msg));
+});
+
 var userId = 0;
 
     socket.on('chat', function(msg){

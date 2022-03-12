@@ -14,21 +14,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
-<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-<script>
-    $(function () {
-        var socket = io();
-        $('form').submit(function(){
-            socket.emit('chat', $('#m').val());
-            $('#m').val('');
-            return false;
-        });
-        socket.on('chat', function(data){
-            $('#messages').append($('<li>').text("user#" + data.id + ": " + data.msg));
-        });
-    });
-</script>
 
 <body>
 <div class="container" id="app">
@@ -42,7 +27,9 @@
         </div>
     </div>
 </div>
-
+<script src="https://unpkg.com/vue@2.4.2"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
 <script src="chat.js"></script>
 </body>
 </html>
