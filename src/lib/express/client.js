@@ -19,11 +19,11 @@ export default (app) => {
     file = config.mode;
     if (config['socket.io'].example) {
       app.use('/socket', express.static(`${client}/socket.html`));
-      app.use('/chat', express.static(`${client}/chat.html`));
       app.use('/token', express.static(`${client}/token.html`));
     }
   }
 
+  app.use('/chat', express.static(`${client}/chat.html`));
   app.use(express.static(client));
   app.use(favicon(path.join(client, 'favicon.ico')));
 
