@@ -13,7 +13,7 @@ export function on() {
     socket.on('game:play', data => emit('play', data));
     socket.on('example:add', data => emit('add', data));
     socket.on('example:delete', data => emit('delete', data));
-    socket.to('game:player', data => emit('player', data));
+    socket.to('game:player').emit(data => data);
 }
 
 // Emit events
