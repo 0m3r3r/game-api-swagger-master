@@ -50,14 +50,6 @@ socket.on('chat', function(data){
     app.messages.push($('#messages').append($('<li>').text("user#" + data.id + ": " + data.msg)));
 });
 
-// socket.on('chat', function(msg){
-//     socket.userId = userId ++;
-//     console.log('message from user#' + socket.userId + ": " + msg);
-//     io.emit('chat', {
-//         id: socket.userId,
-//         msg: msg
-//     });
-// });
 
 socket.on('chat', function (data) {
     console.log('from socket :D', data);
