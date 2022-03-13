@@ -36,7 +36,6 @@ export async function connect() {
                 handshake: socket.handshake,
                 rooms: socket.rooms,
                 acks: socket.acks,
-                server: socket.server,
             });
             socket.join(socket.userID);
 
