@@ -6,24 +6,17 @@
     tags:
       - Authentication
     summary: Signin
-    description: | 
-      Login
-      username = admin / password = 123
-      username = user / password = 123
+    description: |
+    Login
+    username:''string'' password:''string''
     consumes:
-      - application/json
+    - application/json
     parameters:
-      - name: username
-        in: formData
-        description: username
-        required: true
-        type: string
-      - name: password
-        in: formData
-        description: password
-        required: true
-        type: string
-        format: password
+    - in: body
+    name: body
+    required: true
+    schema:
+       $ref: '#/definitions/User'
     responses:
       200:
         description: Success.
