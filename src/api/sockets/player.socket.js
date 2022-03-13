@@ -18,7 +18,7 @@ export function on() {
     });
     io.on("player:room", (socket) => {
         console.log(socket.rooms); // Set { <socket.id> }
-        socket.join("room1");
+        socket.join("room");
         console.log(socket.rooms); // Set { <socket.id>, "room1" }
     });
 }
