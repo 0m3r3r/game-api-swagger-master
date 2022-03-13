@@ -8,7 +8,7 @@
     summary: Signin
     description: |
     Login
-    username:''string'' password:''string''
+    username=string password=string
     consumes:
     - application/json
     parameters:
