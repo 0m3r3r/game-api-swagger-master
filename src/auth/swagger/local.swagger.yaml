@@ -13,10 +13,17 @@
     consumes:
       - application/json
     parameters:
-      - in: body
-        name: body
-        description: '{"username":"", "password": ""}'
+      - name: username
+        in: formData
+        description: username
         required: true
+        type: string
+      - name: password
+        in: formData
+        description: password
+        required: true
+        type: string
+        format: password
     responses:
       200:
         description: Success.
