@@ -57,10 +57,6 @@ socket.on('chat', function(data){
 //     });
 // });
 
-socket.listen(8001, function(){
-    console.log('listening on *:8001');
-});
-
 var logo = document.getElementById("logo");
 logo.addEventListener("animationend", function () {
     app.logo = '';
