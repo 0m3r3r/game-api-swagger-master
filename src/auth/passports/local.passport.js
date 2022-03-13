@@ -2,7 +2,7 @@ import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 import User from '../../api/models/user.model';
 
-var JsonStrategy = require('passport-json').Strategy;
+const JsonStrategy = require('passport-json').Strategy;
 
 passport.use('local', new JsonStrategy(
     function(username, password, done) {
