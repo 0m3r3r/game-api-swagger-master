@@ -16,7 +16,7 @@ var app = new Vue({
     data: {
         logo: 'rubberBand',
         userID: 0,
-        imessage = '',
+        imessage: '',
         messages: []
     },
     created: function created() {
