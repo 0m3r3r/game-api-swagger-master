@@ -7,7 +7,7 @@ var url = parseInt(host.split(':').reverse()[0]);
 var hostSocket = host.replace(url, 8001);
 
 var socket = io.connect(hostSocket, {
-    'transports': ['websocket']
+    'transports': ['websocket', 'polling']
 });
 
 
@@ -34,7 +34,7 @@ var app = new Vue({
         },
         addSend: function addSend() {
             var _this2 = this;
-            socket.userId = userID ++;
+            socket.userId = _this2.userID ++;
 
             _this2.imessage = '';
             socket.emit('chat',{
