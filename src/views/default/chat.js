@@ -13,11 +13,9 @@ var socket = io.connect(hostSocket, {
 
 var app = new Vue({
     el: "#app",
-    userID: 0,
     data: {
         logo: 'rubberBand',
-        igreet: '',
-        ilanguage: '',
+        userID: 0,
         messages: []
     },
     created: function created() {
@@ -47,16 +45,17 @@ var app = new Vue({
 
 socket.on('chat', function(data){
     $('#messages').append($('<li>').text("user#" + data.id + ": " + data.msg));
+    app.messages.push($('#messages').append($('<li>').text("user#" + data.id + ": " + data.msg)));
 });
 
-socket.on('chat', function(msg){
-    socket.userId = userId ++;
-    console.log('message from user#' + socket.userId + ": " + msg);
-    io.emit('chat', {
-        id: socket.userId,
-        msg: msg
-    });
-});
+// socket.on('chat', function(msg){
+//     socket.userId = userId ++;
+//     console.log('message from user#' + socket.userId + ": " + msg);
+//     io.emit('chat', {
+//         id: socket.userId,
+//         msg: msg
+//     });
+// });
 
 socket.listen(8001, function(){
     console.log('listening on *:8001');
