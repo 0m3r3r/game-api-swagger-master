@@ -26,7 +26,7 @@ export async function connect() {
     return await io.on('connection', socket => {
 
         if (config.log) {
-            console.log("socketId", socket);
+            console.log("socketId", socket.id);
             console.log(chalk.blueBright(`Socket-> connected`));
             total();
         }
