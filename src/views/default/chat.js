@@ -59,9 +59,9 @@ socket.on('chat', function(data){
 //     });
 // });
 
-socket.io.listen(8001, function(){
-    console.log('listening on *:3000');
-})
+socket.on('chat', function (data) {
+    console.log('from socket :D', data);
+});
 
 var logo = document.getElementById("logo");
 logo.addEventListener("animationend", function () {
