@@ -11,9 +11,9 @@ export default (_socket, _io) => {
 // Here should be all events 'on'
 export function on() {
     socket.on('player:play', data => emit('play', data));
-    socket.on("player:another", socket => {
-        socket.on("private message", (anotherSocketId, msg) => {
-            socket.to(anotherSocketId).emit("private message", socket.id, msg);
+    socket.on("player:another", sock => {
+        sock.on("private message", (anotherSocketId, msg) => {
+            sock.to(anotherSocketId).emit("private message", socket.id, msg);
         });
     });
     socket.on("player:room", (socket) => {
