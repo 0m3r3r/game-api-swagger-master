@@ -16,10 +16,10 @@ export function on() {
             sock.to(anotherSocketId).emit("private message", socket.id, msg);
         });
     });
-    socket.on("player:room", (socket) => {
-        console.log(socket.rooms); // Set { <socket.id> }
-        socket.join("room");
-        console.log(socket.rooms); // Set { <socket.id>, "room1" }
+    socket.on("player:room", (sck) => {
+        console.log(sck.rooms); // Set { <socket.id> }
+        sck.join("room");
+        console.log(sck.rooms); // Set { <socket.id>, "room1" }
     });
 }
 
