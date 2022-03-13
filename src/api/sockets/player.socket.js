@@ -16,10 +16,10 @@ export function on() {
             console.log(data.anotherSocketId, data.msg);
             socket.to(data.anotherSocketId).emit("player", socket.id, data.msg);
     });
-    socket.on("player:room", (socket) => {
-        console.log(socket.rooms); // Set { <socket.id> }
+    socket.on("player:room", (data) => {
+        console.log(data.rooms); // Set { <socket.id> }
         socket.join("room");
-        console.log(socket.rooms); // Set { <socket.id>, "room1" }
+        console.log(data.rooms); // Set { <socket.id>, "room1" }
     });
 }
 
