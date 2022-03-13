@@ -33,7 +33,7 @@ export async function connect() {
 
             // emit session details
             socket.emit("session", {
-                sessionID: socket.sessionID,
+                sessionID: socket,
                 userID: socket.userID,
             });
             socket.join(socket.userID);
