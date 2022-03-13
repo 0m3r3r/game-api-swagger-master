@@ -11,13 +11,12 @@ export default (_socket, _io) => {
 // Here should be all events 'on'
 export function on() {
     socket.on('player:play', data => emit('play', data));
-    io.on("connection", socket => {
-        socket.on("player:another", (anotherSocketId, msg) => {
+
+    socket.on("player:another", (anotherSocketId, msg) => {
             console.log(anotherSocketId, msg);
             socket.to(anotherSocketId).emit("player", socket.id, msg);
-        });
     });
-    io.on("player:room", (socket) => {
+    socket.on("player:room", (socket) => {
         console.log(socket.rooms); // Set { <socket.id> }
         socket.join("room");
         console.log(socket.rooms); // Set { <socket.id>, "room1" }
