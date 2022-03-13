@@ -13,7 +13,7 @@ export function on() {
     socket.on('example:play', data => emit('play', data));
     socket.on('example:add', data => emit('add', data));
     socket.on('example:delete', data => emit('delete', data));
-    socket.to('example:player', data => io.to("player").emit("basicEmit", 1, "2", data));
+    socket.to('example:player', data => emit('player', data));
 }
 
 // Emit events
