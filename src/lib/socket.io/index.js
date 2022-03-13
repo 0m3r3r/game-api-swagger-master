@@ -16,12 +16,13 @@ fs.readdirSync(pathSocket).forEach(path => {
 // Total socket clients
 function total() {
     io.of('/').adapter.clients((err, clients) => {
-        console.log(chalk.blueBright(`Socket-> total clients [${clients.length}]`));
+        console.log(chalk.blueBright(`Socket-> total clients [${clients}]`));
     });
 }
 
 // Connect
 export async function connect() {
+
 
     return await io.on('connection', socket => {
 
@@ -29,7 +30,25 @@ export async function connect() {
             console.log("socketId", socket.id);
             console.log(chalk.blueBright(`Socket-> connected`));
             total();
+
+            // emit session details
+            socket.emit("session", {
+                sessionID: socket.sessionID,
+                userID: socket.userID,
+            });
+            socket.join(socket.userID);
+
+
+            // notify existing users
+            socket.broadcast.emit("user connected", {
+                userID: socket.userID,
+                username: socket.username,
+                connected: true,
+                messages: [],
+            });
         }
+
+
 
         // inject events to new socket...
         events.forEach(path => require(path).default(socket, io));
@@ -37,6 +56,7 @@ export async function connect() {
         socket.on('disconnect', () => {
             if (config.log) {
                 console.log(chalk.blueBright(`Socket-> disconnect`));
+                socket.broadcast.emit("user disconnected", socket.userID);
                 total();
             }
         });
