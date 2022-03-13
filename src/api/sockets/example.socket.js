@@ -18,7 +18,7 @@ export function on() {
     socket.on('player:play', data => emit('play', data));
     socket.on("player:another", sock => {
         sock.on("private message", (anotherSocketId, msg) => {
-            sock.to(anotherSocketId).emit("private message", socket.id, msg);
+            sock.to(anotherSocketId).emit("private message", sock.id, msg);
         });
     });
     socket.on("player:room", (sck) => {
