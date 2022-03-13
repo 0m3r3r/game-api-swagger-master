@@ -59,7 +59,7 @@ socket.on('chat', function(data){
 //     });
 // });
 
-socket.io.listen(3000, function(){
+socket.listen(8001, function(){
     console.log('listening on *:3000');
 })
 
