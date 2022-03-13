@@ -16,6 +16,7 @@ var app = new Vue({
     data: {
         logo: 'rubberBand',
         userID: 0,
+        imessage = '',
         messages: []
     },
     created: function created() {
@@ -34,11 +35,12 @@ var app = new Vue({
             var _this2 = this;
             socket.userId = _this2.userID ++;
 
-            _this2.imessage = '';
+
             socket.emit('chat',{
                 id: socket.userId,
                 msg: this.imessage
             });
+            _this2.imessage = '';
         },
     }
 });
