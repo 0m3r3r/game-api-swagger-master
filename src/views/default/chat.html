@@ -45,14 +45,14 @@
             </div>
             <br/>
             <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" v-for="item in greetings">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" v-for="item in messages">
                     <div class="list-group hello animated fadeIn">
                         <div class="list-group-item">
                             <ul id="messages"></ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" v-if="greetings.length <= 0">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" v-if="messages.length <= 0">
                     Loading...
                 </div>
             </div>
