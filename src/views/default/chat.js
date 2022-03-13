@@ -10,37 +10,61 @@ var socket = io.connect(hostSocket, {
     'transports': ['websocket']
 });
 
-var app = require('express')();
-var http = require('http').Server(app);
 
-app.get('/', function(req, res){
-    res.sendFile(__dirname + '/chat.html');
+var app = new Vue({
+    el: "#app",
+    userID: 0,
+    data: {
+        logo: 'rubberBand',
+        igreet: '',
+        ilanguage: '',
+        greetings: []
+    },
+    created: function created() {
+        this.getMessages();
+    },
+    methods: {
+        getMessages: function getMessages() {
+            var _this = this;
+
+        },
+        addSend: function addSend() {
+            socket.userId = userID ++;
+            var _this2 = this;
+            _this2.imessage = '';
+            socket.emit('chat',{
+                id: socket.userId,
+                msg: this.imessage
+            });
+        },
+    }
 });
 
-$('form').submit(function(){
-    socket.emit('chat', $('#m').val());
-    $('#m').val('');
-    return false;
-});
 socket.on('chat', function(data){
     $('#messages').append($('<li>').text("user#" + data.id + ": " + data.msg));
 });
 
-var userId = 0;
-
-    socket.on('chat', function(msg){
-        socket.userId = userId ++;
-        console.log('message from user#' + socket.userId + ": " + msg);
-        io.emit('chat', {
-            id: socket.userId,
-            msg: msg
-        });
+socket.on('chat', function(msg){
+    socket.userId = userId ++;
+    console.log('message from user#' + socket.userId + ": " + msg);
+    io.emit('chat', {
+        id: socket.userId,
+        msg: msg
     });
+});
 
 socket.listen(8001, function(){
     console.log('listening on *:8001');
 });
 
-// http.listen(8001, function(){
-//     console.log('listening on *:8001');
-// });
+var logo = document.getElementById("logo");
+logo.addEventListener("animationend", function () {
+    app.logo = '';
+});
+
+socket.on('animation', function (data) {
+    console.log('from socket :D', data);
+    app.logo = data;
+});
+
+
