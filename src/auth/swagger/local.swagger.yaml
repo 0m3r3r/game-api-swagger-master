@@ -7,10 +7,11 @@
       - Authentication
     summary: Signin
     description: |
-    Login
-    username=string password=string
+      Login
+      username =  / password = 
+      username =  / password =
     consumes:
-    - application/json
+      - application/json
     parameters:
     - in: body
     name: body
