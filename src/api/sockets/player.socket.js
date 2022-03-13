@@ -13,6 +13,7 @@ export function on() {
     socket.on('player:play', data => emit('play', data));
     io.on("player:another", socket => {
         socket.on("private message", (anotherSocketId, msg) => {
+            console.log(anotherSocketId, msg);
             socket.to(anotherSocketId).emit("private message", socket.id, msg);
         });
     });
