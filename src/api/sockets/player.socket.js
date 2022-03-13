@@ -12,9 +12,9 @@ export default (_socket, _io) => {
 export function on() {
     socket.on('player:play', data => emit('play', data));
 
-    socket.on("player:another", (anotherSocketId, msg) => {
-            console.log(anotherSocketId, msg);
-            socket.to(anotherSocketId).emit("player", socket.id, msg);
+    socket.on("player:another", (data) => {
+            console.log(data.anotherSocketId, data.msg);
+            socket.to(data.anotherSocketId).emit("player", socket.id, data.msg);
     });
     socket.on("player:room", (socket) => {
         console.log(socket.rooms); // Set { <socket.id> }
