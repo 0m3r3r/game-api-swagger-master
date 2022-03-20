@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 
 const WindSchema = new Schema({
     data: {
-        type: [WindParamsSchema],
+        type: [[WindParamsSchema]],
         required: [false, 'wind rot']
     }
 });
