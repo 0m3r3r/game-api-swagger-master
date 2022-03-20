@@ -1,5 +1,4 @@
 export default [
-    {params: [
         {
             windRot: 78.36659,
             windStrenght: 8.972946,
@@ -75,6 +74,4 @@ export default [
             windStrenght: 15.8562641,
             time: 4.4774394
         }
-    ]
-    }
 ];

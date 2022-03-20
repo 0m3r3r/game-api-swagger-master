@@ -71,8 +71,8 @@ export default {
           plant: "once",
         },
         {
-          file: "parameters.seed",
-          schema: "Parameters",
+          file: "wind.seed",
+          schema: "Wind",
           plant: "once",
         },
       ],

@@ -3,13 +3,6 @@ import mongoosePaginate from 'mongoose-paginate';
 import {Decimal} from "mongoose/lib/schema";
 const Schema = mongoose.Schema;
 
-const ParametersSchema = new Schema({
-    params: {
-        type: [WindSchema],
-        required: [true, 'wind root']
-    },
-
-});
 
 const WindSchema = new Schema({
     windRot: {
@@ -26,6 +19,6 @@ const WindSchema = new Schema({
     }
 });
 
-ParametersSchema.plugin(mongoosePaginate);
+WindSchema.plugin(mongoosePaginate);
 
-export default mongoose.model('Parameters', ParametersSchema);
+export default mongoose.model('Wind', WindSchema);
