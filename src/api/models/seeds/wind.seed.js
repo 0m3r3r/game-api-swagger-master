@@ -1,5 +1,6 @@
 export default [
-    [
+    {data:
+            [
         {
             windRot: 78.36659,
             windStrenght: 8.972946,
@@ -500,8 +501,9 @@ export default [
             windStrenght: 16.5247688,
             time: 4.42149
         }
-    ],
-    [
+    ]},
+    {data:
+            [
         {
             windRot: 79.46578,
             windStrenght: 15.2375212,
@@ -1002,8 +1004,8 @@ export default [
             windStrenght: 18.4384041,
             time: 6.477034
         }
-    ],
-    [
+    ]},
+    {data:  [
         {
             windRot: 98.51546,
             windStrenght: 9.819574,
@@ -1504,8 +1506,8 @@ export default [
             windStrenght: 24.1210938,
             time: 2.77990818
         }
-    ],
-    [
+    ]},
+    {data:  [
         {
             windRot: 299.9237,
             windStrenght: 14.1369,
@@ -2006,8 +2008,8 @@ export default [
             windStrenght: 18.73692,
             time: 3.963499
         }
-    ],
-    [
+    ]},
+    {data:  [
         {
             windRot: 146.744919,
             windStrenght: 16.8103561,
@@ -2508,8 +2510,8 @@ export default [
             windStrenght: 2.73852062,
             time: 6.460752
         }
-    ],
-    [
+    ]},
+    {data:  [
         {
             windRot: 204.91156,
             windStrenght: 11.3939486,
@@ -3010,8 +3012,8 @@ export default [
             windStrenght: 2.908308,
             time: 2.3124094
         }
-    ],
-    [
+    ]},
+    {data:  [
         {
             windRot: 83.64179,
             windStrenght: 21.6591,
@@ -3512,8 +3514,8 @@ export default [
             windStrenght: 9.925766,
             time: 4.585418
         }
-    ],
-    [
+    ]},
+    {data: [
         {
             windRot: 237.265549,
             windStrenght: 13.3786831,
@@ -4014,8 +4016,8 @@ export default [
             windStrenght: 20.1936932,
             time: 8.111764
         }
-    ],
-    [
+    ]},
+    {data:  [
         {
             windRot: 196.722153,
             windStrenght: 18.4280453,
@@ -4516,8 +4518,8 @@ export default [
             windStrenght: 22.9992237,
             time: 2.41646767
         }
-    ],
-    [
+    ]},
+    {data:  [
         {
             windRot: 12.8304434,
             windStrenght: 19.4958782,
@@ -5018,5 +5020,5 @@ export default [
             windStrenght: 7.582955,
             time: 2.57047653
         }
-    ]
+    ]}
 ];
