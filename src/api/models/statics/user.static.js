@@ -14,7 +14,7 @@ export default (User) => {
         User.findOne({username: username}).select("+password").exec().then(user => {
           console.log("user: ",user);
 
-          if (user === null)
+          if (!user)
             reject(`${username}' is not registered.`); // You can register user here
 
 
