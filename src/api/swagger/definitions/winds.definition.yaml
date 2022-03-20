@@ -2,13 +2,15 @@ definitions:
   Winds:
     properties:
       data:
-        type: "array"
+      type: array
+      items:
+        type: array
         items:
-          type: "array"
-            properties:
-              windRot:
-                type: "string"
-              windStrenght:
-                type: "string"
-              time:
-                type: "string"
+          type: object
+          properties:
+            windRot:
+              type: number
+            windStrenght:
+              type: number
+            time:
+              type: number
