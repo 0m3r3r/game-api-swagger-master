@@ -1,3 +1,4 @@
+import {notFound} from "express-easy-helper";
 
 export default (User) => {
 
@@ -28,7 +29,7 @@ export default (User) => {
           //
           // });
 
-        }).catch(err => reject(err));
+        }).then(notFound(`${username}' is not registered.`)).catch(err => reject(err));
 
       });
 
