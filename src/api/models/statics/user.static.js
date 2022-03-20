@@ -18,9 +18,14 @@ export default (User) => {
             reject(`${username}' is not registered.`); // You can register user here
 
 
-          user.lastLogin = Date.now();
-          user.save().then(_user => resolve(_user)).catch(err => reject(err));
 
+
+          if(password === user.password){
+            user.lastLogin = Date.now();
+            user.save().then(_user => resolve(_user)).catch(err => reject(err));
+          } else {
+            reject(`This password is not correct.`);
+          }
           // user.authenticate(password).then(isMatch => { // validate password
           //   if (!isMatch)
           //     reject(`This password is not correct.`);
