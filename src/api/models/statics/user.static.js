@@ -10,10 +10,7 @@ export default (User) => {
 
         const User = this;
 
-        User.findOne({
-          username: username,
-          provider: 'password'
-        }).select("+password").exec().then(user => {
+        User.findOne({username: username}).select("+password").exec().then(user => {
           console.log("user: ",user);
 
           if (!user)
