@@ -12,8 +12,7 @@
         description: Success.
         schema:
           type: object
-          items:
-            $ref: "#/definitions/Winds"
+          $ref: "#/definitions/Winds"
       404:
         $ref: '#/responses/404'
       500:
