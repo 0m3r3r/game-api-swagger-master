@@ -1,19 +1,17 @@
 definitions:
   Winds:
-    type: array
-    items:
-      type: object
-      properties:
-        data:
+  type: object
+    properties:
+      data:
+        type: array
+        items:
           type: array
           items:
-            type: array
-            items:
-              type: object
-              properties:
-                windRot:
-                  type: number
-                windStrenght:
-                  type: number
-                time:
-                  type: number
+            type: object
+            properties:
+              windRot:
+                type: number
+              windStrenght:
+                type: number
+              time:
+                type: number
