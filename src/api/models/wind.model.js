@@ -5,15 +5,15 @@ const Schema = mongoose.Schema;
 
 const WindSchema = new Schema({
     windRot: {
-        type: Number,
+        type: mongoose.Decimal128,
         required: [false, 'wind rot']
     },
     windStrenght: {
-        type: Number,
+        type: mongoose.Decimal128,
         required: [false, 'wind Strenght']
     },
     time: {
-        type: Number,
+        type: mongoose.Decimal128,
         required: [false, 'time ']
     }
 });
