@@ -57,7 +57,7 @@ export async function connect() {
         socket.on('disconnect', () => {
             if (config.log) {
                 console.log(chalk.blueBright(`Socket-> disconnect`));
-                socket.broadcast.emit("user disconnected", socket.userID);
+                socket.broadcast.emit("user disconnected", socket.id);
                 total();
             }
         });
