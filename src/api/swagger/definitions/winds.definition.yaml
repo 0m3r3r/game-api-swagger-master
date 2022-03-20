@@ -3,4 +3,4 @@ definitions:
     properties:
       data:
         type: "array"
-        items: "array"
+        items: "object"
