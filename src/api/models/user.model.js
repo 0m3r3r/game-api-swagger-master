@@ -51,19 +51,16 @@ const UserSchema = new Schema({
     info: {}
   },
   coins: {
-    id: String,
-    info: {}
+    type: String
   },
   experience: {
-    id: Number,
-    info: {}
+    type: Number
   },
   experiencepoint: {
-    id: Number,
-    info: {}
+    type: Number
   },
   boxtime: {
-    id: Date,
+    type: Date,
     default: Date.now
   }
 });
