@@ -1,0 +1,20 @@
+/api/winds/list:
+  x-swagger-router-controller: winds.controller
+# list
+  get:
+    operationId: list
+    tags:
+      - Winds
+    summary: Get the list of winds
+    description: Get the list of winds
+    responses:
+      200:
+        description: Success.
+        schema:
+          type: array
+          items:
+            $ref: "#/definitions/Winds"
+      404:
+        $ref: '#/responses/404'
+      500:
+        $ref: '#/responses/500'

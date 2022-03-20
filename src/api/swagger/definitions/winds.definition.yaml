@@ -1,0 +1,5 @@
+definitions:
+  Winds:
+    properties:
+      data:
+        type: []

@@ -1,5 +1,6 @@
 export default [
-    {data: [   [
+    {data: [
+        [
             {
                 windRot: 78.36659,
                 windStrenght: 8.972946,
@@ -5018,5 +5019,6 @@ export default [
                     windStrenght: 7.582955,
                     time: 2.57047653
                 }
-            ]]}
+            ]
+        ]}
 ];
