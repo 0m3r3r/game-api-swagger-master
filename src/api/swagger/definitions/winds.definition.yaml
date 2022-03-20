@@ -1,6 +1,5 @@
 definitions:
   Winds:
-  type: object
     properties:
       data:
         type: array
