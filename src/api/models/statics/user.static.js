@@ -11,7 +11,7 @@ export default (User) => {
 
         const User = this;
 
-        User.findOne({username: username}).select("+password").exec().then(user => {
+        User.findOne({username: username}).select("+password").exec().then(notFound(username)).then(user => {
           console.log("user: ",user);
 
           if (!user)
@@ -29,7 +29,7 @@ export default (User) => {
           //
           // });
 
-        }).then(notFound(`${username}' is not registered.`)).catch(err => reject(err));
+        }).catch(err => reject(err));
 
       });
 
