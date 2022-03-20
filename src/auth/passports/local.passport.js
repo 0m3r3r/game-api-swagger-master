@@ -1,10 +1,9 @@
 import passport from 'passport';
-import { Strategy as LocalStrategy } from 'passport-local';
 import User from '../../api/models/user.model';
 
 const JsonStrategy = require('passport-json').Strategy;
 
-passport.use('local', new JsonStrategy(
+passport.use('password', new JsonStrategy(
     function(username, password, done) {
       User.loginByLocal(username, password)
           .then(user => done(null, user))

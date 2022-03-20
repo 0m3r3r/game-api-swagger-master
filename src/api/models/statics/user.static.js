@@ -12,7 +12,7 @@ export default (User) => {
 
         User.findOne({
           username: username,
-          provider: 'local'
+          provider: 'password'
         }).select("+password").exec().then(user => {
 
           if (!user)

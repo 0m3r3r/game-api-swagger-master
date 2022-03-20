@@ -50,7 +50,7 @@ export default {
   },
   mongoose: {
     // MongoDB
-    uri: `mongodb://Admin:fouras12345@178.211.58.142:27017/${DB_NAME}`,
+    uri: `mongodb://Admin:fouras12345@localhost:27017/${DB_NAME}`,
     // uri: `mongodb://localhost:27017/${DB_NAME}`,
     options: {
       useNewUrlParser: true,
