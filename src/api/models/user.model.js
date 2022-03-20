@@ -62,7 +62,7 @@ const UserSchema = new Schema({
     id: Number,
     info: {}
   },
-  items: {
+  boxTime: {
     id: Date,
     default: Date.now,
     info: {}
