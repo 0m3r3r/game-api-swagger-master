@@ -3,4 +3,13 @@ definitions:
     properties:
       data:
         type: "array"
-        items: "object"
+        items:
+          type: "object"
+            properties:
+              windRot:
+                type: "string"
+              windStrenght:
+                type: "string"
+              time:
+                type: "string"
+
