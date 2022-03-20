@@ -58,11 +58,11 @@ const UserSchema = new Schema({
     id: Number,
     info: {}
   },
-  experiencePoint: {
+  experiencepoint: {
     id: Number,
     info: {}
   },
-  boxTime: {
+  boxtime: {
     id: Date,
     default: Date.now
   }

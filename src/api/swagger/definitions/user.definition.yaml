@@ -27,3 +27,11 @@ definitions:
         type: "string"
       social:
         type: "object"
+      coins:
+        type: "number"
+      experience:
+        type: "number"
+      experiencepoint:
+        type: "number"
+      boxtime:
+        type: "number"
