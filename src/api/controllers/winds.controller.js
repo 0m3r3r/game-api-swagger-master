@@ -1,6 +1,6 @@
 import { result, notFound, error } from 'express-easy-helper';
 import { emit } from '../sockets/example.socket';
-import Winds from '../models/winds.model';
+import Winds from '../models/wind.model';
 
 // List Wind's
 export function list(req, res) {
