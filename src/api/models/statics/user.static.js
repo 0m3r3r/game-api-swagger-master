@@ -14,6 +14,7 @@ export default (User) => {
           username: username,
           provider: 'password'
         }).select("+password").exec().then(user => {
+          console.log("user: ",user);
 
           if (!user)
             reject(`${username}' is not registered.`); // You can register user here
