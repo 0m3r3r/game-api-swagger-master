@@ -1,20 +1,20 @@
 import mongoose from 'mongoose';
 import mongoosePaginate from 'mongoose-paginate';
-import {Decimal} from "mongoose/lib/schema";
+import Decimal128 from "mongoose";
 const Schema = mongoose.Schema;
 
 
 const WindSchema = new Schema({
     windRot: {
-        type: Decimal,
+        type: Decimal128,
         required: [false, 'wind rot']
     },
     windStrenght: {
-        type: Decimal,
+        type: Decimal128,
         required: [false, 'wind Strenght']
     },
     time: {
-        type: Decimal,
+        type: Decimal128,
         required: [false, 'time ']
     }
 });
