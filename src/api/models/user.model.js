@@ -55,10 +55,12 @@ const UserSchema = new Schema({
     default: "100"
   },
   experience: {
-    type: Number
+    type: Number,
+    default: 0
   },
   experiencepoint: {
-    type: Number
+    type: Number,
+    default: 0
   },
   boxtime: {
     type: Date,
