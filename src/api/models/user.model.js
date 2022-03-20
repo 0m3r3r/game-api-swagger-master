@@ -66,8 +66,7 @@ const UserSchema = new Schema({
     id: Date,
     default: Date.now,
     info: {}
-  },
-
+  }
 });
 
 UserSchema.path('username').index({ unique: true });
