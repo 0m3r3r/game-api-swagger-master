@@ -51,7 +51,8 @@ const UserSchema = new Schema({
     info: {}
   },
   coins: {
-    type: String
+    type: String,
+    default: "100"
   },
   experience: {
     type: Number
