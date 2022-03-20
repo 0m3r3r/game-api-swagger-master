@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import mongoosePaginate from 'mongoose-paginate';
+import {Decimal} from "mongoose/lib/schema";
 const Schema = mongoose.Schema;
 
 const ParametersSchema = new Schema({
@@ -12,15 +13,15 @@ const ParametersSchema = new Schema({
 
 const WindSchema = new Schema({
     windRot: {
-        type: Float32Array,
+        type: Decimal,
         required: [true, 'wind rot']
     },
     windStrenght: {
-        type: Float32Array,
+        type: Decimal,
         required: [true, 'wind Strenght']
     },
     time: {
-        type: Float32Array,
+        type: Decimal,
         required: [true, 'time ']
     }
 });
