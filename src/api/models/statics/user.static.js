@@ -13,19 +13,20 @@ export default (User) => {
         User.findOne({username: username}).select("+password").exec().then(user => {
           console.log("user: ",user);
 
-          if (!user)
+          if (user === null)
             reject(`${username}' is not registered.`); // You can register user here
 
 
-          user.password.authenticate(password).then(isMatch => { // validate password
-            if (!isMatch)
-              reject(`This password is not correct.`);
+          user.lastLogin = Date.now();
+          user.save().then(_user => resolve(_user)).catch(err => reject(err));
 
-            user.lastLogin = Date.now();
-            user.save().then(_user => resolve(_user)).catch(err => reject(err));
-
-
-          });
+          // user.authenticate(password).then(isMatch => { // validate password
+          //   if (!isMatch)
+          //     reject(`This password is not correct.`);
+          //
+          //
+          //
+          // });
 
         }).catch(err => reject(err));
 
