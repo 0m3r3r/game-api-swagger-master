@@ -70,6 +70,11 @@ export default {
           schema: "Example",
           plant: "once",
         },
+        {
+          file: "parameters.seed",
+          schema: "Parameters",
+          plant: "once",
+        },
       ],
     },
   },
