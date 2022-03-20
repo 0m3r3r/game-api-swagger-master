@@ -26,7 +26,6 @@ const WindSchema = new Schema({
     }
 });
 
-WindSchema.plugin(mongoosePaginate);
 ParametersSchema.plugin(mongoosePaginate);
 
 export default mongoose.model('Parameters', ParametersSchema);
