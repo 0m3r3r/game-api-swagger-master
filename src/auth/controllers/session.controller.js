@@ -14,6 +14,19 @@ export function list(req, res) {
     .catch(error(res))
 
 }
+//List game information
+export function listInfo(req, res) {
+
+    return call.getValuesByPattern(req.user._id)
+        .then(notFound(res))
+        .then(all => {
+            for (let prop in all)
+                all[prop] = JSON.parse(all[prop]);
+            return result(res, all);
+        })
+        .catch(error(res))
+
+}
 
 // Destroy a session
 export function destroy(req, res) {

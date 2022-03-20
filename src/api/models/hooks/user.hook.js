@@ -8,7 +8,7 @@ export default (User) => {
     let user = this;
 
     // if username from social network exists then new username!
-    if (user.provider !== 'local' && (user.isNew || user.isModified('username'))) {
+    if (user.provider !== 'password' && (user.isNew || user.isModified('username'))) {
 
       let username = await new Promise((resolve, reject) => {
         (function calc(username) {
