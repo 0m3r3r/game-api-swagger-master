@@ -49,7 +49,25 @@ const UserSchema = new Schema({
   social: {
     id: String,
     info: {}
-  }
+  },
+  coins: {
+    id: String,
+    info: {}
+  },
+  experience: {
+    id: Number,
+    info: {}
+  },
+  experiencePoint: {
+    id: Number,
+    info: {}
+  },
+  items: {
+    id: Date,
+    default: Date.now,
+    info: {}
+  },
+
 });
 
 UserSchema.path('username').index({ unique: true });
