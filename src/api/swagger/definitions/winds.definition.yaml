@@ -2,4 +2,4 @@ definitions:
   Winds:
     properties:
       data:
-        type: "array"
+        type: "object"
