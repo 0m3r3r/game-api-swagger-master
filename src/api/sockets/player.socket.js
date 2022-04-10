@@ -19,7 +19,7 @@ export function on() {
     socket.on("player:room", (data) => {
         console.log(data.rooms); // Set { <socket.id> }
         socket.join(data.rooms);
-        socket.to(data.rooms).emit(data.message);
+        socket.to(data.rooms).emit(data.msj);
         console.log(data.rooms); // Set { <socket.id>, "room1" }
     });
 }
