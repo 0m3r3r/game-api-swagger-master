@@ -31,6 +31,7 @@ export async function connect() {
             console.log(chalk.blueBright(`Socket-> connected`));
             total();
 
+
             // emit session details
             socket.emit("session", {
                 handshake: socket.handshake,

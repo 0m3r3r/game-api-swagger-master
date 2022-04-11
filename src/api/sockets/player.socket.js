@@ -22,6 +22,7 @@ export function on() {
         socket.to(data.rooms).emit(data.message);
         console.log(data.rooms); // Set { <socket.id>, "room1" }
     });
+
 }
 
 // Emit events

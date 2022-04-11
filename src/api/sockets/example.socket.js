@@ -14,6 +14,7 @@ export function on() {
     socket.on('example:add', data => emit('add', data));
     socket.on('example:delete', data => emit('delete', data));
     socket.to('example:player', data => emit('player', data));
+
 }
 
 // Emit events
